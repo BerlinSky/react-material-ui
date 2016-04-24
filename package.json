@@ -6,6 +6,9 @@
     "start": "node server.js",
     "lint": "eslint src"
   },
+  "keywords": [
+    "reactmui"
+  ],
   "author": "",
   "license": "MIT",
   "devDependencies": {
