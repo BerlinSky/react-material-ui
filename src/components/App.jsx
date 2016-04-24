@@ -1,21 +1,35 @@
 import React from 'react';
 import MessageList from './MessageList.jsx';
 
+import AppBar from 'material-ui/lib/app-bar';
+import RaisedButton from 'material-ui/lib/raised-button';
+
+import ThemeManager from 'material-ui/lib/styles/theme-manager';
+
+import MyRawTheme from '../app-mui-theme.js';
+
 class App extends React.Component {
 	constructor() {
 		super();
-		// this.state = {
-		// 	message: [
-		// 		'Hi there, How silly is it?????',
-		// 		'I do not think so, do you???',
-		// 		'How do I know?'
-		// 	]
-		// };
+	}
+
+	static childContextTypes = {
+	  muiTheme: React.PropTypes.object
+	}
+
+	 getChildContext() {
+	  return {
+	    muiTheme: ThemeManager.getMuiTheme(MyRawTheme),
+	  };
 	}
 
 	render() {
 		return (
-			<div><MessageList /></div>
+			<div>
+				<AppBar title="React Meets Material UI" />
+				<MessageList />
+				<RaisedButton label="More Info" primary={true} />
+			</div>
 		);
 	}
 }

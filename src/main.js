@@ -9,7 +9,6 @@ class Main extends React.Component {
   render () {
     return (
       <div>
-        <p> Hello React Today????</p>
         <App />
       </div>
     );
