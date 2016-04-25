@@ -1,6 +1,10 @@
 import React from 'react';
 import Message from './Message.jsx';
 
+import mui from 'material-ui';
+
+var {Card, List} = mui;
+
 class MessageList extends React.Component {
 	constructor(props) {
 		super(props);
@@ -19,16 +23,18 @@ class MessageList extends React.Component {
 		var messageNodes = this.state.message.map((message) => {
 			return (
 				<div>
-					<div style={{color: 'red'}}>
 						<Message message={ message } />
-					</div>
-		      <h1>Hello, world.  No more new ideas, right??</h1>
 				</div>
 			);
 		});
 
 		return (
-			<div>{messageNodes}</div>
+			<Card>
+				<list>
+					{messageNodes}
+				</list>
+			</Card>
+			// <div>{messageNodes}</div>
 		);
 	}
 }
