@@ -1,6 +1,5 @@
 import React from 'react';
 import Channel from './Channel.jsx';
-
 import mui from 'material-ui';
 
 var {Card, List} = mui;
